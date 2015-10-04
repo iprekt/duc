@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual C# Express 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IPrekt_DUC", "IPrekt_DUC\IPrekt_DUC.csproj", "{AEE90624-D20D-4227-B6B7-1E1C14D57941}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AEE90624-D20D-4227-B6B7-1E1C14D57941}.Debug|x86.ActiveCfg = Debug|x86
+		{AEE90624-D20D-4227-B6B7-1E1C14D57941}.Debug|x86.Build.0 = Debug|x86
+		{AEE90624-D20D-4227-B6B7-1E1C14D57941}.Release|x86.ActiveCfg = Release|x86
+		{AEE90624-D20D-4227-B6B7-1E1C14D57941}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
