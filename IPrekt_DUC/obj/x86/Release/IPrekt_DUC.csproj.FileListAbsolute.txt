@@ -1,0 +1,10 @@
+C:\log\C#\iprekt\IPrekt_DUC\IPrekt_DUC\bin\Release\IPrekt_DUC.exe.config
+C:\log\C#\iprekt\IPrekt_DUC\IPrekt_DUC\bin\Release\IPrekt_DUC.exe
+C:\log\C#\iprekt\IPrekt_DUC\IPrekt_DUC\bin\Release\IPrekt_DUC.pdb
+C:\log\C#\iprekt\IPrekt_DUC\IPrekt_DUC\obj\x86\Release\IPrekt_DUC.frmMain.resources
+C:\log\C#\iprekt\IPrekt_DUC\IPrekt_DUC\obj\x86\Release\IPrekt_DUC.frmManager.resources
+C:\log\C#\iprekt\IPrekt_DUC\IPrekt_DUC\obj\x86\Release\IPrekt_DUC.Properties.Resources.resources
+C:\log\C#\iprekt\IPrekt_DUC\IPrekt_DUC\obj\x86\Release\IPrekt_DUC.csproj.GenerateResource.Cache
+C:\log\C#\iprekt\IPrekt_DUC\IPrekt_DUC\obj\x86\Release\IPrekt_DUC.exe
+C:\log\C#\iprekt\IPrekt_DUC\IPrekt_DUC\obj\x86\Release\IPrekt_DUC.pdb
+C:\log\C#\iprekt\IPrekt_DUC\IPrekt_DUC\obj\x86\Release\IPrekt_DUC.frmSettings.resources

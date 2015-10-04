@@ -12,6 +12,9 @@ namespace IPrekt_DUC
 {
     public partial class frmMain : Form
     {
+
+        private Updater _updater = new Updater();
+
         public frmMain()
         {
             InitializeComponent();
@@ -27,6 +30,8 @@ namespace IPrekt_DUC
                 this.Show(); Application.DoEvents(); Thread.Sleep(200);
                 menuItem6_Click(null, null);
             }
+
+            _updater.start();
         }
 
         private void notifyIcon_DoubleClick(object sender, EventArgs e)
@@ -80,6 +85,12 @@ namespace IPrekt_DUC
                 foreach (KeyValuePair<string, string> e in AddressList.getList())
                     activeList.Items.Add(e.Key);
             }
+        }
+
+        private void menuItemSettings_Click(object sender, EventArgs e)
+        {
+            frmSettings frm = new frmSettings();
+            frm.ShowDialog(this);
         }
     }
 }

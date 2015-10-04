@@ -15,3 +15,4 @@ C:\log\C#\iprekt\IPrekt_DUC\IPrekt_DUC\obj\x86\Debug\IPrekt_DUC.csproj.GenerateR
 C:\log\C#\iprekt\IPrekt_DUC\IPrekt_DUC\obj\x86\Debug\IPrekt_DUC.csprojResolveAssemblyReference.cache
 C:\log\C#\iprekt\IPrekt_DUC\IPrekt_DUC\obj\x86\Debug\IPrekt_DUC.frmManager.resources
 C:\log\C#\iprekt\IPrekt_DUC\IPrekt_DUC\bin\Debug\IPrekt_DUC.exe.config
+C:\log\C#\iprekt\IPrekt_DUC\IPrekt_DUC\obj\x86\Debug\IPrekt_DUC.frmSettings.resources

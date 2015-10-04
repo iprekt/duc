@@ -188,6 +188,7 @@
             this.menuItemSettings.Index = 3;
             this.menuItemSettings.Shortcut = System.Windows.Forms.Shortcut.CtrlS;
             this.menuItemSettings.Text = "Settings";
+            this.menuItemSettings.Click += new System.EventHandler(this.menuItemSettings_Click);
             // 
             // menuItem7
             // 
