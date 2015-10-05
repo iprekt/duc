@@ -60,6 +60,7 @@
             this.txtAddress.Size = new System.Drawing.Size(226, 20);
             this.txtAddress.TabIndex = 3;
             this.txtAddress.Text = "example.iprekt.com";
+            this.txtAddress.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtAddress_KeyDown);
             // 
             // txtPassword
             // 
@@ -69,6 +70,7 @@
             this.txtPassword.Size = new System.Drawing.Size(226, 20);
             this.txtPassword.TabIndex = 4;
             this.txtPassword.Text = "your password";
+            this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyDown);
             // 
             // addressList
             // 

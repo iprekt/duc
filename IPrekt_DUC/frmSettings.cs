@@ -11,6 +11,9 @@ namespace IPrekt_DUC
 {
     public partial class frmSettings : Form
     {
+
+
+
         public frmSettings()
         {
             InitializeComponent();

@@ -6,13 +6,16 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="Setting_refreshRate" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">0</Value>
+      <Value Profile="(Default)">1</Value>
     </Setting>
     <Setting Name="Setting_useProxy" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="Setting_ipServiceList" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">http://monip.org | IP\s\:\s([\d\.]+)
+http://icanhazip.com | ([\d\.]+)
+http://api.ipify.org | ([\d\.]+)
+http://curlmyip.com | ([\d\.]+)</Value>
     </Setting>
   </Settings>
 </SettingsFile>

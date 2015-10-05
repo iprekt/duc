@@ -82,14 +82,12 @@
             this.txtServicesList.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtServicesList.Size = new System.Drawing.Size(460, 94);
             this.txtServicesList.TabIndex = 0;
-            this.txtServicesList.Text = "http://monip.org | IP\\s\\:\\s([\\d\\.]+)\r\nhttp://icanhazip.com | ([\\d\\.]+)\r\nhttp://ap" +
-                "i.ipify.org | ([\\d\\.]+)\r\nhttp://curlmyip.com | ([\\d\\.]+)\r\n";
             // 
             // cmdSave
             // 
-            this.cmdSave.Location = new System.Drawing.Point(444, 246);
+            this.cmdSave.Location = new System.Drawing.Point(430, 246);
             this.cmdSave.Name = "cmdSave";
-            this.cmdSave.Size = new System.Drawing.Size(59, 27);
+            this.cmdSave.Size = new System.Drawing.Size(73, 27);
             this.cmdSave.TabIndex = 2;
             this.cmdSave.Text = "Save";
             this.cmdSave.UseVisualStyleBackColor = true;
@@ -97,7 +95,7 @@
             // 
             // cmdCancel
             // 
-            this.cmdCancel.Location = new System.Drawing.Point(363, 246);
+            this.cmdCancel.Location = new System.Drawing.Point(349, 246);
             this.cmdCancel.Name = "cmdCancel";
             this.cmdCancel.Size = new System.Drawing.Size(75, 27);
             this.cmdCancel.TabIndex = 3;

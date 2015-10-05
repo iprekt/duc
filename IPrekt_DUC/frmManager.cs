@@ -50,7 +50,7 @@ namespace IPrekt_DUC
                 Application.DoEvents();
 
                 if (!AddressList.add(txtAddress.Text, txtPassword.Text))
-                    MessageBox.Show("Unable to connect or Address and password incorrect.\r\nPlease check your settings and try again.");
+                    MessageBox.Show("Unable to connect, or address and password are incorrect.\r\nPlease check your settings and try again.");
                 else
                 {
                     txtAddress.Text = "";
@@ -84,6 +84,18 @@ namespace IPrekt_DUC
 
             AddressList.removeAll();
             refreshList();
+        }
+
+        private void txtAddress_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+                btnAdd_Click(null, null);
+        }
+
+        private void txtPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                btnAdd_Click(null, null);
         }
     }
 }

@@ -37,7 +37,7 @@ namespace IPrekt_DUC.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
         public int Setting_refreshRate {
             get {
                 return ((int)(this["Setting_refreshRate"]));
@@ -61,7 +61,8 @@ namespace IPrekt_DUC.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://monip.org | IP\\s\\:\\s([\\d\\.]+)\r\nhttp://icanhazip.com | ([\\d\\.]+)\r\nhttp://ap" +
+            "i.ipify.org | ([\\d\\.]+)\r\nhttp://curlmyip.com | ([\\d\\.]+)")]
         public string Setting_ipServiceList {
             get {
                 return ((string)(this["Setting_ipServiceList"]));

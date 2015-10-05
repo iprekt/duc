@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Net.NetworkInformation;
+using System.Net;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
 
 namespace IPrekt_DUC
 {
@@ -11,6 +14,7 @@ namespace IPrekt_DUC
     {
         private bool _alive = false;
         private Thread _thread = null;
+        private string _publicIp = "";
 
         public void start()
         {
@@ -25,6 +29,7 @@ namespace IPrekt_DUC
             try
             {
                 _alive = true;
+
                 updateLoop();
             }
             finally
@@ -35,12 +40,93 @@ namespace IPrekt_DUC
 
         private void updateLoop()
         {
-            // TODO: Update logic here.
+            //Update logic.
+
+            _publicIp = getPublicIp();
+
+            while (true)
+            {
+                waitNextRefreshRate();
+                if (weHaveAddressesToUpdate() && publicIpChanged())
+                {
+                    updateAllAddresses();
+                }
+            }
         }
 
-        private void waitForIpChange()
+        private bool weHaveAddressesToUpdate()
         {
-            
+            return AddressList.getList().Count > 0;
+        }
+
+
+        private void updateAllAddresses()
+        {
+            foreach (KeyValuePair<string, string> entry in AddressList.getList())
+            {
+                string address = entry.Key;
+                string password = entry.Value;
+
+                IPrektAPI.update(address, password);
+            }
+        }
+
+        private bool publicIpChanged()
+        {
+            string curIP = getPublicIp();
+            bool changed = _publicIp != curIP;
+            if (changed) _publicIp = curIP;
+            return changed;
+        }
+
+
+        private void waitNextRefreshRate()
+        {
+            // This makes sure the loop can instantlu exit in-
+            // case the user lowers the delay in the settings.
+
+            int t = Environment.TickCount;
+            while ((Environment.TickCount-t) < Properties.Settings.Default.Setting_refreshRate * 60 * 1000)
+            {
+                Thread.Sleep(1000);
+            }
+        }
+
+        private static string getPublicIp()
+        {
+            try
+            {
+                // Trying third party services to balance the load :
+
+                string data = Settings.get("Setting_ipServiceList", "");
+                string[] sett = data.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
+                sett = Tools.shuffleArray(sett);
+
+                foreach (string line in sett)
+                {
+                    if (!line.Contains("|")) continue;
+
+                    string[] st = line.Split(new char[]{'|'}, 2);
+                    string url = st[0].Trim(); if (url.Length < 1) continue;
+                    string regex = st[1].Trim(); if (regex.Length < 1) continue;
+
+                    WebClient wc = Tools.getWebClient();
+                    string html = wc.DownloadString(url);
+
+                    try
+                    {
+                        string ip = Regex.Match(html, regex).Groups[1].Value;
+                        if (Tools.isValideIp(ip)) return ip;
+                    }
+                    catch (Exception) {};
+                }
+
+                // If all fails, use the official API :
+
+                return IPrektAPI.getIp();
+            }
+            catch (Exception) { }
+            throw new Exception("Could not get the public IP.");
         }
 
     }
