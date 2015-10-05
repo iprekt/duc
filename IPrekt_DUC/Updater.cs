@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading;
+using System.Net.NetworkInformation;
 
 namespace IPrekt_DUC
 {
@@ -35,6 +36,11 @@ namespace IPrekt_DUC
         private void updateLoop()
         {
             // TODO: Update logic here.
+        }
+
+        private void waitForIpChange()
+        {
+            
         }
 
     }

@@ -34,5 +34,41 @@ namespace IPrekt_DUC.Properties {
                 this["AddressList"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int Setting_refreshRate {
+            get {
+                return ((int)(this["Setting_refreshRate"]));
+            }
+            set {
+                this["Setting_refreshRate"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool Setting_useProxy {
+            get {
+                return ((bool)(this["Setting_useProxy"]));
+            }
+            set {
+                this["Setting_useProxy"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Setting_ipServiceList {
+            get {
+                return ((string)(this["Setting_ipServiceList"]));
+            }
+            set {
+                this["Setting_ipServiceList"] = value;
+            }
+        }
     }
 }

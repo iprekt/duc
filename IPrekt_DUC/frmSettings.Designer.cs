@@ -30,14 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSettings));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBoxUseProxy = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtServicesList = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.cmdSave = new System.Windows.Forms.Button();
+            this.cmdCancel = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.trackBarRefreshRate = new System.Windows.Forms.TrackBar();
             this.lblRefreshRate = new System.Windows.Forms.Label();
+            this.trackBarRefreshRate = new System.Windows.Forms.TrackBar();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -46,7 +46,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.checkBox1);
+            this.groupBox1.Controls.Add(this.checkBoxUseProxy);
             this.groupBox1.Location = new System.Drawing.Point(324, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(179, 79);
@@ -54,15 +54,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Network";
             // 
-            // checkBox1
+            // checkBoxUseProxy
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(19, 34);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(147, 17);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "Use system proxy settings";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBoxUseProxy.AutoSize = true;
+            this.checkBoxUseProxy.Location = new System.Drawing.Point(19, 34);
+            this.checkBoxUseProxy.Name = "checkBoxUseProxy";
+            this.checkBoxUseProxy.Size = new System.Drawing.Size(147, 17);
+            this.checkBoxUseProxy.TabIndex = 0;
+            this.checkBoxUseProxy.Text = "Use system proxy settings";
+            this.checkBoxUseProxy.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
@@ -85,23 +85,25 @@
             this.txtServicesList.Text = "http://monip.org | IP\\s\\:\\s([\\d\\.]+)\r\nhttp://icanhazip.com | ([\\d\\.]+)\r\nhttp://ap" +
                 "i.ipify.org | ([\\d\\.]+)\r\nhttp://curlmyip.com | ([\\d\\.]+)\r\n";
             // 
-            // button1
+            // cmdSave
             // 
-            this.button1.Location = new System.Drawing.Point(444, 246);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(59, 27);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Save";
-            this.button1.UseVisualStyleBackColor = true;
+            this.cmdSave.Location = new System.Drawing.Point(444, 246);
+            this.cmdSave.Name = "cmdSave";
+            this.cmdSave.Size = new System.Drawing.Size(59, 27);
+            this.cmdSave.TabIndex = 2;
+            this.cmdSave.Text = "Save";
+            this.cmdSave.UseVisualStyleBackColor = true;
+            this.cmdSave.Click += new System.EventHandler(this.cmdSave_Click);
             // 
-            // button2
+            // cmdCancel
             // 
-            this.button2.Location = new System.Drawing.Point(363, 246);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 27);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Cancel";
-            this.button2.UseVisualStyleBackColor = true;
+            this.cmdCancel.Location = new System.Drawing.Point(363, 246);
+            this.cmdCancel.Name = "cmdCancel";
+            this.cmdCancel.Size = new System.Drawing.Size(75, 27);
+            this.cmdCancel.TabIndex = 3;
+            this.cmdCancel.Text = "Cancel";
+            this.cmdCancel.UseVisualStyleBackColor = true;
+            this.cmdCancel.Click += new System.EventHandler(this.cmdCancel_Click);
             // 
             // groupBox3
             // 
@@ -114,6 +116,15 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Refresh rate";
             // 
+            // lblRefreshRate
+            // 
+            this.lblRefreshRate.AutoSize = true;
+            this.lblRefreshRate.Location = new System.Drawing.Point(13, 34);
+            this.lblRefreshRate.Name = "lblRefreshRate";
+            this.lblRefreshRate.Size = new System.Drawing.Size(32, 13);
+            this.lblRefreshRate.TabIndex = 1;
+            this.lblRefreshRate.Text = "5 min";
+            // 
             // trackBarRefreshRate
             // 
             this.trackBarRefreshRate.Location = new System.Drawing.Point(52, 28);
@@ -124,15 +135,7 @@
             this.trackBarRefreshRate.TabIndex = 0;
             this.trackBarRefreshRate.Value = 5;
             this.trackBarRefreshRate.Scroll += new System.EventHandler(this.trackBarRefreshRate_Scroll);
-            // 
-            // lblRefreshRate
-            // 
-            this.lblRefreshRate.AutoSize = true;
-            this.lblRefreshRate.Location = new System.Drawing.Point(13, 34);
-            this.lblRefreshRate.Name = "lblRefreshRate";
-            this.lblRefreshRate.Size = new System.Drawing.Size(32, 13);
-            this.lblRefreshRate.TabIndex = 1;
-            this.lblRefreshRate.Text = "5 min";
+            this.trackBarRefreshRate.ValueChanged += new System.EventHandler(this.trackBarRefreshRate_ValueChanged);
             // 
             // frmSettings
             // 
@@ -140,8 +143,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(515, 285);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.cmdCancel);
+            this.Controls.Add(this.cmdSave);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -164,11 +167,11 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBoxUseProxy;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txtServicesList;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button cmdSave;
+        private System.Windows.Forms.Button cmdCancel;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TrackBar trackBarRefreshRate;
         private System.Windows.Forms.Label lblRefreshRate;

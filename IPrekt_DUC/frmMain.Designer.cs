@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.activeList = new System.Windows.Forms.ListBox();
             this.mainMenu1 = new System.Windows.Forms.MainMenu(this.components);
             this.menuItem1 = new System.Windows.Forms.MenuItem();
@@ -38,14 +39,13 @@
             this.menuItem5 = new System.Windows.Forms.MenuItem();
             this.menuItem6 = new System.Windows.Forms.MenuItem();
             this.menuItemCreate = new System.Windows.Forms.MenuItem();
+            this.menuItem7 = new System.Windows.Forms.MenuItem();
+            this.menuItemSettings = new System.Windows.Forms.MenuItem();
             this.menuItem3 = new System.Windows.Forms.MenuItem();
             this.menuItemHelp = new System.Windows.Forms.MenuItem();
             this.menuItem4 = new System.Windows.Forms.MenuItem();
             this.menuItemAbout = new System.Windows.Forms.MenuItem();
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.menuItemSettings = new System.Windows.Forms.MenuItem();
-            this.menuItem7 = new System.Windows.Forms.MenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -77,6 +77,19 @@
             this.splitContainer1.SplitterDistance = 160;
             this.splitContainer1.SplitterWidth = 1;
             this.splitContainer1.TabIndex = 3;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = global::IPrekt_DUC.Properties.Resources.iprekt;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(157, 188);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // activeList
             // 
@@ -138,6 +151,18 @@
             this.menuItemCreate.Text = "&Create";
             this.menuItemCreate.Click += new System.EventHandler(this.menuItemCreate_Click);
             // 
+            // menuItem7
+            // 
+            this.menuItem7.Index = 2;
+            this.menuItem7.Text = "-";
+            // 
+            // menuItemSettings
+            // 
+            this.menuItemSettings.Index = 3;
+            this.menuItemSettings.Shortcut = System.Windows.Forms.Shortcut.CtrlS;
+            this.menuItemSettings.Text = "Settings";
+            this.menuItemSettings.Click += new System.EventHandler(this.menuItemSettings_Click);
+            // 
             // menuItem3
             // 
             this.menuItem3.Index = 2;
@@ -169,31 +194,6 @@
             this.notifyIcon.Text = "IPrekt.com";
             this.notifyIcon.Visible = true;
             this.notifyIcon.DoubleClick += new System.EventHandler(this.notifyIcon_DoubleClick);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = global::IPrekt_DUC.Properties.Resources.iprekt;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(157, 188);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
-            // menuItemSettings
-            // 
-            this.menuItemSettings.Index = 3;
-            this.menuItemSettings.Shortcut = System.Windows.Forms.Shortcut.CtrlS;
-            this.menuItemSettings.Text = "Settings";
-            this.menuItemSettings.Click += new System.EventHandler(this.menuItemSettings_Click);
-            // 
-            // menuItem7
-            // 
-            this.menuItem7.Index = 2;
-            this.menuItem7.Text = "-";
             // 
             // frmMain
             // 
