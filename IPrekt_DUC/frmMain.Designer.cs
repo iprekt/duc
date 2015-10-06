@@ -33,7 +33,7 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.activeList = new System.Windows.Forms.ListBox();
-            this.mainMenu1 = new System.Windows.Forms.MainMenu(this.components);
+            this.mainMenu = new System.Windows.Forms.MainMenu(this.components);
             this.menuItem1 = new System.Windows.Forms.MenuItem();
             this.menuItemQuit = new System.Windows.Forms.MenuItem();
             this.menuItem5 = new System.Windows.Forms.MenuItem();
@@ -46,11 +46,17 @@
             this.menuItem4 = new System.Windows.Forms.MenuItem();
             this.menuItemAbout = new System.Windows.Forms.MenuItem();
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
+            this.notifyIconContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuItemRefreshNow = new System.Windows.Forms.MenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.notifyIconContextMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -107,9 +113,9 @@
             this.activeList.Size = new System.Drawing.Size(328, 191);
             this.activeList.TabIndex = 0;
             // 
-            // mainMenu1
+            // mainMenu
             // 
-            this.mainMenu1.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.mainMenu.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.menuItem1,
             this.menuItem5,
             this.menuItem3});
@@ -132,6 +138,7 @@
             // 
             this.menuItem5.Index = 1;
             this.menuItem5.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuItemRefreshNow,
             this.menuItem6,
             this.menuItemCreate,
             this.menuItem7,
@@ -140,25 +147,25 @@
             // 
             // menuItem6
             // 
-            this.menuItem6.Index = 0;
+            this.menuItem6.Index = 1;
             this.menuItem6.Shortcut = System.Windows.Forms.Shortcut.CtrlM;
             this.menuItem6.Text = "&Manager";
             this.menuItem6.Click += new System.EventHandler(this.menuItem6_Click);
             // 
             // menuItemCreate
             // 
-            this.menuItemCreate.Index = 1;
+            this.menuItemCreate.Index = 2;
             this.menuItemCreate.Text = "&Create";
             this.menuItemCreate.Click += new System.EventHandler(this.menuItemCreate_Click);
             // 
             // menuItem7
             // 
-            this.menuItem7.Index = 2;
+            this.menuItem7.Index = 3;
             this.menuItem7.Text = "-";
             // 
             // menuItemSettings
             // 
-            this.menuItemSettings.Index = 3;
+            this.menuItemSettings.Index = 4;
             this.menuItemSettings.Shortcut = System.Windows.Forms.Shortcut.CtrlS;
             this.menuItemSettings.Text = "Settings";
             this.menuItemSettings.Click += new System.EventHandler(this.menuItemSettings_Click);
@@ -190,10 +197,48 @@
             // 
             // notifyIcon
             // 
+            this.notifyIcon.ContextMenuStrip = this.notifyIconContextMenu;
             this.notifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon.Icon")));
             this.notifyIcon.Text = "IPrekt.com";
             this.notifyIcon.Visible = true;
+            this.notifyIcon.BalloonTipClicked += new System.EventHandler(this.notifyIcon_BalloonTipClicked);
             this.notifyIcon.DoubleClick += new System.EventHandler(this.notifyIcon_DoubleClick);
+            this.notifyIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon_MouseDoubleClick);
+            // 
+            // notifyIconContextMenu
+            // 
+            this.notifyIconContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.openToolStripMenuItem,
+            this.toolStripMenuItem1,
+            this.exitToolStripMenuItem});
+            this.notifyIconContextMenu.Name = "notifyIconContextMenu";
+            this.notifyIconContextMenu.Size = new System.Drawing.Size(136, 54);
+            // 
+            // openToolStripMenuItem
+            // 
+            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.openToolStripMenuItem.Text = "&Open";
+            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(132, 6);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.exitToolStripMenuItem.Text = "&Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // menuItemRefreshNow
+            // 
+            this.menuItemRefreshNow.Index = 0;
+            this.menuItemRefreshNow.Shortcut = System.Windows.Forms.Shortcut.CtrlR;
+            this.menuItemRefreshNow.Text = "&Refresh now";
             // 
             // frmMain
             // 
@@ -203,7 +248,7 @@
             this.ClientSize = new System.Drawing.Size(489, 190);
             this.Controls.Add(this.splitContainer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Menu = this.mainMenu1;
+            this.Menu = this.mainMenu;
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "IPrekt.com - Free DDNS DUC";
@@ -214,6 +259,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.notifyIconContextMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -222,7 +268,7 @@
 
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.MainMenu mainMenu1;
+        private System.Windows.Forms.MainMenu mainMenu;
         private System.Windows.Forms.MenuItem menuItem1;
         private System.Windows.Forms.MenuItem menuItemQuit;
         private System.Windows.Forms.MenuItem menuItem3;
@@ -236,6 +282,11 @@
         private System.Windows.Forms.MenuItem menuItem4;
         private System.Windows.Forms.MenuItem menuItem7;
         private System.Windows.Forms.MenuItem menuItemSettings;
+        private System.Windows.Forms.ContextMenuStrip notifyIconContextMenu;
+        private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.MenuItem menuItemRefreshNow;
 
     }
 }

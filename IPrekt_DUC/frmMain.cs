@@ -44,6 +44,7 @@ namespace IPrekt_DUC
         {
             notifyIcon.ShowBalloonTip(500, "We're here !", "Monitoring your IP change.", ToolTipIcon.None);
             
+            this.WindowState = FormWindowState.Minimized; Application.DoEvents();
             this.Hide();
             e.Cancel = true;
         }
@@ -91,6 +92,29 @@ namespace IPrekt_DUC
         {
             frmSettings frm = new frmSettings();
             frm.ShowDialog(this);
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            menuItemQuit_Click(null, null);
+        }
+
+        private void notifyIcon_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            this.Show(); Application.DoEvents(); // Fixes some odd bug in windows 7.
+            this.Show();
+
+            this.WindowState = FormWindowState.Normal;
+        }
+
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            notifyIcon_MouseDoubleClick(null, null);
+        }
+
+        private void notifyIcon_BalloonTipClicked(object sender, EventArgs e)
+        {
+            notifyIcon_MouseDoubleClick(null, null);
         }
     }
 }

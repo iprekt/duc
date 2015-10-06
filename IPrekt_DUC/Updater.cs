@@ -40,7 +40,8 @@ namespace IPrekt_DUC
 
         private void updateLoop()
         {
-            //Update logic.
+            // Update logic.
+            // TODO: Listen for network events, for an even faster IP-change detection.
 
             _publicIp = getPublicIp();
 
