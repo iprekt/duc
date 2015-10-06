@@ -9,7 +9,7 @@ namespace IPrekt_DUC
     class IPrektAPI
     {
         private static string URL_UPDATE    = "http://api.iprekt.com/?api=update&name=%n&pass=%p&format=bool&from=duc";
-        private static string URL_EXISTS    = "http://api.iprekt.com/?api=exists&name=%n&format=bool&from=duc";
+        private static string URL_EXISTS    = "http://api.iprekt.com/?api=exists&name=%n&pass=%p&format=bool&from=duc";
         private static string URL_GETIP     = "http://api.iprekt.com/?api=getip&from=duc";
 
         public static bool update(string address, string password)
@@ -35,8 +35,8 @@ namespace IPrekt_DUC
                 WebClient wc = Tools.getWebClient();
 
                 string url = URL_EXISTS;
-                url = url.Replace("%n", address);
-                url = url.Replace("%p", password);
+                url = url.Replace("%n", Uri.EscapeDataString(address));
+                url = url.Replace("%p", Uri.EscapeDataString(password));
 
                 return wc.DownloadString(url).Trim().Equals("1");
             }
