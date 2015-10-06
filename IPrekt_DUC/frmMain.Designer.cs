@@ -238,7 +238,8 @@
             // 
             this.menuItemRefreshNow.Index = 0;
             this.menuItemRefreshNow.Shortcut = System.Windows.Forms.Shortcut.CtrlR;
-            this.menuItemRefreshNow.Text = "&Refresh now";
+            this.menuItemRefreshNow.Text = "&Update now";
+            this.menuItemRefreshNow.Click += new System.EventHandler(this.menuItemRefreshNow_Click);
             // 
             // frmMain
             // 

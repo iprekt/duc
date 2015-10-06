@@ -61,15 +61,23 @@ namespace IPrekt_DUC
         }
 
 
-        private void updateAllAddresses()
+        public void updateAllAddresses()
         {
+            List<string> successList = new List<string>();
+            List<string> failList = new List<string>();
+
             foreach (KeyValuePair<string, string> entry in AddressList.getList())
             {
                 string address = entry.Key;
                 string password = entry.Value;
 
-                IPrektAPI.update(address, password);
+                bool ok = IPrektAPI.update(address, password);
+
+                (ok ? successList : failList).Add(address);
             }
+
+            if (successList.Count> 0)   Notify.notify("Update success", successList.Count   + " addresse(s) updated !", "notifyUpdateSuccess");
+            if (failList.Count > 0)     Notify.notify("Update failed",  failList.Count      + " addresse(s) failed to update !", "notifyUpdateFail");
         }
 
         private bool publicIpChanged()
@@ -111,11 +119,11 @@ namespace IPrekt_DUC
                     string url = st[0].Trim(); if (url.Length < 1) continue;
                     string regex = st[1].Trim(); if (regex.Length < 1) continue;
 
-                    WebClient wc = Tools.getWebClient();
-                    string html = wc.DownloadString(url);
-
                     try
                     {
+                        WebClient wc = Tools.getWebClient();
+                        string html = wc.DownloadString(url);
+
                         string ip = Regex.Match(html, regex).Groups[1].Value;
                         if (Tools.isValideIp(ip)) return ip;
                     }

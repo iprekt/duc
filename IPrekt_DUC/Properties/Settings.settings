@@ -17,5 +17,11 @@ http://icanhazip.com | ([\d\.]+)
 http://api.ipify.org | ([\d\.]+)
 http://curlmyip.com | ([\d\.]+)</Value>
     </Setting>
+    <Setting Name="Setting_notifyUpdateSuccess" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="Setting_notifyUpdateFail" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

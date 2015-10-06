@@ -71,5 +71,29 @@ namespace IPrekt_DUC.Properties {
                 this["Setting_ipServiceList"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool Setting_notifyUpdateSuccess {
+            get {
+                return ((bool)(this["Setting_notifyUpdateSuccess"]));
+            }
+            set {
+                this["Setting_notifyUpdateSuccess"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool Setting_notifyUpdateFail {
+            get {
+                return ((bool)(this["Setting_notifyUpdateFail"]));
+            }
+            set {
+                this["Setting_notifyUpdateFail"] = value;
+            }
+        }
     }
 }

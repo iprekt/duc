@@ -19,8 +19,8 @@ namespace IPrekt_DUC
                 WebClient wc = Tools.getWebClient();
 
                 string url = URL_UPDATE;
-                url = url.Replace("%n", address);
-                url = url.Replace("%p", password);
+                url = url.Replace("%n", Uri.EscapeDataString(address));
+                url = url.Replace("%p", Uri.EscapeDataString(password));
 
                 return wc.DownloadString(url).Trim().Equals("1");
             }

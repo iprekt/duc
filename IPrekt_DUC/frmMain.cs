@@ -22,6 +22,7 @@ namespace IPrekt_DUC
 
         private void frmMain_Load(object sender, EventArgs e)
         {
+            Notify.init(this);
             AddressList.init();
             reloadList();
 
@@ -115,6 +116,18 @@ namespace IPrekt_DUC
         private void notifyIcon_BalloonTipClicked(object sender, EventArgs e)
         {
             notifyIcon_MouseDoubleClick(null, null);
+        }
+
+
+        public NotifyIcon getNotifyIcon() { return notifyIcon; }
+
+        private void menuItemRefreshNow_Click(object sender, EventArgs e)
+        {
+            if (_updater != null)
+            {
+                System.Media.SystemSounds.Beep.Play();
+                _updater.updateAllAddresses();
+            }
         }
     }
 }

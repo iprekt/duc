@@ -38,10 +38,14 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.lblRefreshRate = new System.Windows.Forms.Label();
             this.trackBarRefreshRate = new System.Windows.Forms.TrackBar();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.checkNotifyUpdateSuccess = new System.Windows.Forms.CheckBox();
+            this.checkNotifyUpdateFail = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarRefreshRate)).BeginInit();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -69,7 +73,7 @@
             this.groupBox2.Controls.Add(this.txtServicesList);
             this.groupBox2.Location = new System.Drawing.Point(12, 97);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(491, 138);
+            this.groupBox2.Size = new System.Drawing.Size(246, 138);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Public IP services (URL | IP Regex)";
@@ -79,8 +83,8 @@
             this.txtServicesList.Location = new System.Drawing.Point(16, 28);
             this.txtServicesList.Multiline = true;
             this.txtServicesList.Name = "txtServicesList";
-            this.txtServicesList.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtServicesList.Size = new System.Drawing.Size(460, 94);
+            this.txtServicesList.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txtServicesList.Size = new System.Drawing.Size(211, 94);
             this.txtServicesList.TabIndex = 0;
             // 
             // cmdSave
@@ -135,11 +139,43 @@
             this.trackBarRefreshRate.Scroll += new System.EventHandler(this.trackBarRefreshRate_Scroll);
             this.trackBarRefreshRate.ValueChanged += new System.EventHandler(this.trackBarRefreshRate_ValueChanged);
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.checkNotifyUpdateFail);
+            this.groupBox4.Controls.Add(this.checkNotifyUpdateSuccess);
+            this.groupBox4.Location = new System.Drawing.Point(264, 97);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(239, 138);
+            this.groupBox4.TabIndex = 5;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Notifications";
+            // 
+            // checkNotifyUpdateSuccess
+            // 
+            this.checkNotifyUpdateSuccess.AutoSize = true;
+            this.checkNotifyUpdateSuccess.Location = new System.Drawing.Point(17, 54);
+            this.checkNotifyUpdateSuccess.Name = "checkNotifyUpdateSuccess";
+            this.checkNotifyUpdateSuccess.Size = new System.Drawing.Size(209, 17);
+            this.checkNotifyUpdateSuccess.TabIndex = 0;
+            this.checkNotifyUpdateSuccess.Text = "Notify me when an address is updated.";
+            this.checkNotifyUpdateSuccess.UseVisualStyleBackColor = true;
+            // 
+            // checkNotifyUpdateFail
+            // 
+            this.checkNotifyUpdateFail.AutoSize = true;
+            this.checkNotifyUpdateFail.Location = new System.Drawing.Point(17, 77);
+            this.checkNotifyUpdateFail.Name = "checkNotifyUpdateFail";
+            this.checkNotifyUpdateFail.Size = new System.Drawing.Size(174, 17);
+            this.checkNotifyUpdateFail.TabIndex = 1;
+            this.checkNotifyUpdateFail.Text = "Notify me when an update fails.";
+            this.checkNotifyUpdateFail.UseVisualStyleBackColor = true;
+            // 
             // frmSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(515, 285);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.cmdCancel);
             this.Controls.Add(this.cmdSave);
@@ -158,6 +194,8 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarRefreshRate)).EndInit();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -173,5 +211,8 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TrackBar trackBarRefreshRate;
         private System.Windows.Forms.Label lblRefreshRate;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.CheckBox checkNotifyUpdateSuccess;
+        private System.Windows.Forms.CheckBox checkNotifyUpdateFail;
     }
 }

@@ -29,6 +29,8 @@ namespace IPrekt_DUC
             txtServicesList.Text = Settings.get("Setting_ipServiceList", "");
             trackBarRefreshRate.Value = Settings.get("Setting_refreshRate", 5);
             checkBoxUseProxy.Checked = Settings.get("Setting_useProxy", false);
+            checkNotifyUpdateSuccess.Checked = Settings.get("Setting_notifyUpdateSuccess", false);
+            checkNotifyUpdateFail.Checked = Settings.get("Setting_notifyUpdateFail", false);
         }
 
 
@@ -37,6 +39,8 @@ namespace IPrekt_DUC
             Settings.set("Setting_ipServiceList", txtServicesList.Text);
             Settings.set("Setting_useProxy", checkBoxUseProxy.Checked);
             Settings.set("Setting_refreshRate", trackBarRefreshRate.Value);
+            Settings.set("Setting_notifyUpdateSuccess", checkNotifyUpdateSuccess.Checked);
+            Settings.set("Setting_notifyUpdateFail", checkNotifyUpdateFail.Checked);
 
             System.Media.SystemSounds.Beep.Play();
             this.Close();
