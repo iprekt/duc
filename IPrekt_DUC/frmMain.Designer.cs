@@ -37,6 +37,7 @@
             this.menuItem1 = new System.Windows.Forms.MenuItem();
             this.menuItemQuit = new System.Windows.Forms.MenuItem();
             this.menuItem5 = new System.Windows.Forms.MenuItem();
+            this.menuItemRefreshNow = new System.Windows.Forms.MenuItem();
             this.menuItem6 = new System.Windows.Forms.MenuItem();
             this.menuItemCreate = new System.Windows.Forms.MenuItem();
             this.menuItem7 = new System.Windows.Forms.MenuItem();
@@ -50,7 +51,6 @@
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuItemRefreshNow = new System.Windows.Forms.MenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -145,6 +145,13 @@
             this.menuItemSettings});
             this.menuItem5.Text = "Address";
             // 
+            // menuItemRefreshNow
+            // 
+            this.menuItemRefreshNow.Index = 0;
+            this.menuItemRefreshNow.Shortcut = System.Windows.Forms.Shortcut.CtrlR;
+            this.menuItemRefreshNow.Text = "&Update now";
+            this.menuItemRefreshNow.Click += new System.EventHandler(this.menuItemRefreshNow_Click);
+            // 
             // menuItem6
             // 
             this.menuItem6.Index = 1;
@@ -183,6 +190,7 @@
             // 
             this.menuItemHelp.Index = 0;
             this.menuItemHelp.Text = "Help";
+            this.menuItemHelp.Click += new System.EventHandler(this.menuItemHelp_Click);
             // 
             // menuItem4
             // 
@@ -233,13 +241,6 @@
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.exitToolStripMenuItem.Text = "&Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
-            // 
-            // menuItemRefreshNow
-            // 
-            this.menuItemRefreshNow.Index = 0;
-            this.menuItemRefreshNow.Shortcut = System.Windows.Forms.Shortcut.CtrlR;
-            this.menuItemRefreshNow.Text = "&Update now";
-            this.menuItemRefreshNow.Click += new System.EventHandler(this.menuItemRefreshNow_Click);
             // 
             // frmMain
             // 

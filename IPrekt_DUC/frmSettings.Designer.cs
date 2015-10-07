@@ -39,8 +39,8 @@
             this.lblRefreshRate = new System.Windows.Forms.Label();
             this.trackBarRefreshRate = new System.Windows.Forms.TrackBar();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.checkNotifyUpdateSuccess = new System.Windows.Forms.CheckBox();
             this.checkNotifyUpdateFail = new System.Windows.Forms.CheckBox();
+            this.checkNotifyUpdateSuccess = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -61,7 +61,7 @@
             // checkBoxUseProxy
             // 
             this.checkBoxUseProxy.AutoSize = true;
-            this.checkBoxUseProxy.Location = new System.Drawing.Point(19, 34);
+            this.checkBoxUseProxy.Location = new System.Drawing.Point(19, 30);
             this.checkBoxUseProxy.Name = "checkBoxUseProxy";
             this.checkBoxUseProxy.Size = new System.Drawing.Size(147, 17);
             this.checkBoxUseProxy.TabIndex = 0;
@@ -150,16 +150,6 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Notifications";
             // 
-            // checkNotifyUpdateSuccess
-            // 
-            this.checkNotifyUpdateSuccess.AutoSize = true;
-            this.checkNotifyUpdateSuccess.Location = new System.Drawing.Point(17, 54);
-            this.checkNotifyUpdateSuccess.Name = "checkNotifyUpdateSuccess";
-            this.checkNotifyUpdateSuccess.Size = new System.Drawing.Size(209, 17);
-            this.checkNotifyUpdateSuccess.TabIndex = 0;
-            this.checkNotifyUpdateSuccess.Text = "Notify me when an address is updated.";
-            this.checkNotifyUpdateSuccess.UseVisualStyleBackColor = true;
-            // 
             // checkNotifyUpdateFail
             // 
             this.checkNotifyUpdateFail.AutoSize = true;
@@ -169,6 +159,16 @@
             this.checkNotifyUpdateFail.TabIndex = 1;
             this.checkNotifyUpdateFail.Text = "Notify me when an update fails.";
             this.checkNotifyUpdateFail.UseVisualStyleBackColor = true;
+            // 
+            // checkNotifyUpdateSuccess
+            // 
+            this.checkNotifyUpdateSuccess.AutoSize = true;
+            this.checkNotifyUpdateSuccess.Location = new System.Drawing.Point(17, 54);
+            this.checkNotifyUpdateSuccess.Name = "checkNotifyUpdateSuccess";
+            this.checkNotifyUpdateSuccess.Size = new System.Drawing.Size(209, 17);
+            this.checkNotifyUpdateSuccess.TabIndex = 0;
+            this.checkNotifyUpdateSuccess.Text = "Notify me when an address is updated.";
+            this.checkNotifyUpdateSuccess.UseVisualStyleBackColor = true;
             // 
             // frmSettings
             // 

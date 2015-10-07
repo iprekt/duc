@@ -57,7 +57,7 @@ namespace IPrekt_DUC
 
         private void menuItemQuit_Click(object sender, EventArgs e)
         {
-            Environment.Exit(0);
+            end();
         }
 
         private void menuItem6_Click(object sender, EventArgs e)
@@ -70,6 +70,22 @@ namespace IPrekt_DUC
         private void menuItemCreate_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("http://www.iprekt.com");
+        }
+        private void menuItemHelp_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show( String.Join("\r\n", new string[]
+            {
+                "Help :",
+                "",
+                "After you have created your new DDNS address at http://www.iprekt.com",
+                "",
+                "Open the address manager (or Control+M) and input your name and password then click the 'add' button and close the window.",
+                "",
+                "You may need to change your 'update frequency' in the settings if you wish. Everything else is done automatically for you.",
+                "",
+                "If you face any issues please contact us at : http://www.iprekt.com/?p=feedback"
+            
+            }));
         }
 
 
@@ -129,5 +145,12 @@ namespace IPrekt_DUC
                 _updater.updateAllAddresses();
             }
         }
+
+        private void end()
+        {
+            notifyIcon.Visible = false; Application.DoEvents();
+            Environment.Exit(0);
+        }
+
     }
 }
