@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace IPrekt_DUC
 {
-    class Updater
+    public class Updater
     {
         private bool _alive = false;
         private Thread _thread = null;
@@ -44,6 +44,7 @@ namespace IPrekt_DUC
             // TODO: Listen for network events, for an even faster IP-change detection.
 
             _publicIp = getPublicIp();
+            updateAllAddresses();
 
             while (true)
             {

@@ -39,6 +39,7 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.menuRemoveAll = new System.Windows.Forms.ToolStripMenuItem();
             this.lblLegend = new System.Windows.Forms.Label();
+            this.txtDomain = new System.Windows.Forms.ComboBox();
             this.contextMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,9 +58,9 @@
             this.txtAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAddress.Location = new System.Drawing.Point(12, 288);
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(226, 20);
+            this.txtAddress.Size = new System.Drawing.Size(138, 20);
             this.txtAddress.TabIndex = 3;
-            this.txtAddress.Text = "example.iprekt.com";
+            this.txtAddress.Text = "ADDRESS";
             this.txtAddress.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtAddress_KeyDown);
             // 
             // txtPassword
@@ -69,7 +70,6 @@
             this.txtPassword.PasswordChar = '•';
             this.txtPassword.Size = new System.Drawing.Size(226, 20);
             this.txtPassword.TabIndex = 4;
-            this.txtPassword.Text = "your password";
             this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyDown);
             // 
             // addressList
@@ -117,15 +117,27 @@
             this.lblLegend.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLegend.Location = new System.Drawing.Point(13, 13);
             this.lblLegend.Name = "lblLegend";
-            this.lblLegend.Size = new System.Drawing.Size(263, 16);
+            this.lblLegend.Size = new System.Drawing.Size(223, 16);
             this.lblLegend.TabIndex = 6;
-            this.lblLegend.Text = "Add your address and password to the list :";
+            this.lblLegend.Text = "Add your existing address to the list :";
+            // 
+            // txtDomain
+            // 
+            this.txtDomain.FormattingEnabled = true;
+            this.txtDomain.Items.AddRange(new object[] {
+            ".iprekt.com"});
+            this.txtDomain.Location = new System.Drawing.Point(156, 288);
+            this.txtDomain.Name = "txtDomain";
+            this.txtDomain.Size = new System.Drawing.Size(82, 21);
+            this.txtDomain.TabIndex = 7;
+            this.txtDomain.Text = ".iprekt.com";
             // 
             // frmManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(313, 346);
+            this.Controls.Add(this.txtDomain);
             this.Controls.Add(this.lblLegend);
             this.Controls.Add(this.addressList);
             this.Controls.Add(this.txtPassword);
@@ -137,6 +149,7 @@
             this.Name = "frmManager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Address manager";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmManager_FormClosed);
             this.Load += new System.EventHandler(this.frmManager_Load);
             this.contextMenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -155,5 +168,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem menuRemoveAll;
         private System.Windows.Forms.Label lblLegend;
+        private System.Windows.Forms.ComboBox txtDomain;
     }
 }

@@ -14,7 +14,7 @@ namespace IPrekt_DUC
         public static bool add(string address, string password)
         {
             address = address.Trim().ToLower();
-            if (!IPrektAPI.exists(address, password)) return false;
+            if (!IPrektAPI.exists(address, password, true)) return false;
 
             lock (_list)
             {

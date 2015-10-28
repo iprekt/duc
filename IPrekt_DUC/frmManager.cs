@@ -11,8 +11,12 @@ namespace IPrekt_DUC
 {
     public partial class frmManager : Form
     {
-        public frmManager()
+        private frmMain _frmMain = null;
+        private bool _change = false;
+
+        public frmManager(frmMain frmMain)
         {
+            _frmMain = frmMain;
             InitializeComponent();
         }
 
@@ -42,6 +46,9 @@ namespace IPrekt_DUC
             }
         }
 
+        private string getTxtAddress() { return txtAddress.Text + txtDomain.Text; }
+        private string getTxtPassword() { return txtPassword.Text; }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             try
@@ -49,14 +56,20 @@ namespace IPrekt_DUC
                 this.Enabled = false;
                 Application.DoEvents();
 
-                if (!AddressList.add(txtAddress.Text, txtPassword.Text))
-                    MessageBox.Show("Unable to connect, or address and password are incorrect.\r\nPlease check your settings and try again.");
-                else
+                try
                 {
-                    txtAddress.Text = "";
-                    txtPassword.Text = "";
-                    System.Media.SystemSounds.Beep.Play();
+                    if (!AddressList.add(getTxtAddress(), getTxtPassword()))
+                        MessageBox.Show("Address or password are incorrect.\r\nPlease check your logins and try again.");
+                    else
+                    {
+                        _change = true;
+
+                        txtAddress.Text = "";
+                        txtPassword.Text = "";
+                        System.Media.SystemSounds.Beep.Play();
+                    }
                 }
+                catch (Exception ex) { MessageBox.Show("There was an error.\r\n" + ex.Message); }
 
                 refreshList();
             }
@@ -96,6 +109,16 @@ namespace IPrekt_DUC
         {
             if (e.KeyCode == Keys.Enter)
                 btnAdd_Click(null, null);
+        }
+
+        private void frmManager_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (_change)
+            {
+                if (_frmMain != null)
+                    if (_frmMain._updater != null)
+                        _frmMain._updater.updateAllAddresses();
+            }
         }
     }
 }

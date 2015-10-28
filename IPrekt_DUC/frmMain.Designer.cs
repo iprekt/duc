@@ -51,6 +51,7 @@
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuItem2 = new System.Windows.Forms.MenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -138,41 +139,42 @@
             // 
             this.menuItem5.Index = 1;
             this.menuItem5.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.menuItemRefreshNow,
             this.menuItem6,
             this.menuItemCreate,
             this.menuItem7,
-            this.menuItemSettings});
+            this.menuItemSettings,
+            this.menuItem2,
+            this.menuItemRefreshNow});
             this.menuItem5.Text = "Address";
             // 
             // menuItemRefreshNow
             // 
-            this.menuItemRefreshNow.Index = 0;
+            this.menuItemRefreshNow.Index = 5;
             this.menuItemRefreshNow.Shortcut = System.Windows.Forms.Shortcut.CtrlR;
             this.menuItemRefreshNow.Text = "&Update now";
             this.menuItemRefreshNow.Click += new System.EventHandler(this.menuItemRefreshNow_Click);
             // 
             // menuItem6
             // 
-            this.menuItem6.Index = 1;
+            this.menuItem6.Index = 0;
             this.menuItem6.Shortcut = System.Windows.Forms.Shortcut.CtrlM;
             this.menuItem6.Text = "&Manager";
             this.menuItem6.Click += new System.EventHandler(this.menuItem6_Click);
             // 
             // menuItemCreate
             // 
-            this.menuItemCreate.Index = 2;
+            this.menuItemCreate.Index = 1;
             this.menuItemCreate.Text = "&Create";
             this.menuItemCreate.Click += new System.EventHandler(this.menuItemCreate_Click);
             // 
             // menuItem7
             // 
-            this.menuItem7.Index = 3;
+            this.menuItem7.Index = 2;
             this.menuItem7.Text = "-";
             // 
             // menuItemSettings
             // 
-            this.menuItemSettings.Index = 4;
+            this.menuItemSettings.Index = 3;
             this.menuItemSettings.Shortcut = System.Windows.Forms.Shortcut.CtrlS;
             this.menuItemSettings.Text = "Settings";
             this.menuItemSettings.Click += new System.EventHandler(this.menuItemSettings_Click);
@@ -242,6 +244,11 @@
             this.exitToolStripMenuItem.Text = "&Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
+            // menuItem2
+            // 
+            this.menuItem2.Index = 4;
+            this.menuItem2.Text = "-";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -289,6 +296,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.MenuItem menuItemRefreshNow;
+        private System.Windows.Forms.MenuItem menuItem2;
 
     }
 }

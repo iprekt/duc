@@ -65,7 +65,7 @@
             this.checkBoxUseProxy.Name = "checkBoxUseProxy";
             this.checkBoxUseProxy.Size = new System.Drawing.Size(147, 17);
             this.checkBoxUseProxy.TabIndex = 0;
-            this.checkBoxUseProxy.Text = "Use system proxy settings";
+            this.checkBoxUseProxy.Text = "Use default proxy settings";
             this.checkBoxUseProxy.UseVisualStyleBackColor = true;
             // 
             // groupBox2

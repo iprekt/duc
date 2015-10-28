@@ -12,8 +12,11 @@ namespace IPrekt_DUC
         private static string URL_EXISTS    = "http://api.iprekt.com/?api=exists&name=%n&pass=%p&format=bool&from=duc";
         private static string URL_GETIP     = "http://api.iprekt.com/?api=getip&from=duc";
 
-        public static bool update(string address, string password)
+        public static bool update(string address, string password) { return update(address, password, false); }
+        public static bool update(string address, string password, bool throwException)
         {
+            Exception error = null;
+
             try
             {
                 WebClient wc = Tools.getWebClient();
@@ -24,12 +27,19 @@ namespace IPrekt_DUC
 
                 return wc.DownloadString(url).Trim().Equals("1");
             }
-            catch (Exception) { }
-            return false;
+            catch (Exception e) { error = e; }
+            if (throwException)
+                throw new Exception("Could not update (" + address + "), reason : " + (error == null ? "Unknown." : error.Message));
+            else
+                return false;
         }
 
-        public static bool exists(string address, string password)
+
+        public static bool exists(string address, string password) { return exists(address, password, false); }
+        public static bool exists(string address, string password, bool throwException)
         {
+            Exception error = null;
+
             try
             {
                 WebClient wc = Tools.getWebClient();
@@ -40,9 +50,13 @@ namespace IPrekt_DUC
 
                 return wc.DownloadString(url).Trim().Equals("1");
             }
-            catch (Exception) { }
-            return false;
+            catch (Exception e) { error = e; }
+            if (throwException)
+                throw new Exception("Could not check for (" + address + "), reason : " + (error == null ? "Unknown." : error.Message));
+            else
+                return false;
         }
+
 
         public static string getIp()
         {

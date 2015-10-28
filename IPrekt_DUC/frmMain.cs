@@ -13,7 +13,7 @@ namespace IPrekt_DUC
     public partial class frmMain : Form
     {
 
-        private Updater _updater = new Updater();
+        public Updater _updater = new Updater();
 
         public frmMain()
         {
@@ -62,7 +62,7 @@ namespace IPrekt_DUC
 
         private void menuItem6_Click(object sender, EventArgs e)
         {
-            frmManager frm = new frmManager();
+            frmManager frm = new frmManager(this);
             frm.ShowDialog(this);
             reloadList();
         }
